@@ -20,27 +20,63 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // Accessible mobile navigation.
   const closeMenu = () => {
-    nav?.classList.remove("open");
-    document.body.classList.remove("menu-open");
-    menuToggle?.setAttribute("aria-expanded", "false");
-    menuToggle?.setAttribute("aria-label", "Open navigation");
-    if (menuToggle && window.lucide) {
-      menuToggle.innerHTML = '<i data-lucide="menu"></i>';
+  nav?.classList.remove("open");
+  document.body.classList.remove("menu-open");
+
+  menuToggle?.setAttribute("aria-expanded", "false");
+  menuToggle?.setAttribute("aria-label", "Open navigation");
+
+  if (menuToggle) {
+    menuToggle.innerHTML = '<i data-lucide="menu"></i>';
+
+    if (window.lucide) {
       window.lucide.createIcons();
     }
-  };
+  }
+};
+
   menuToggle?.addEventListener("click", () => {
-    const isOpen = nav.classList.toggle("open");
-    document.body.classList.toggle("menu-open", isOpen);
-    menuToggle.setAttribute("aria-expanded", String(isOpen));
-    menuToggle.setAttribute("aria-label", isOpen ? "Close navigation" : "Open navigation");
-    menuToggle.innerHTML = isOpen ? '<i data-lucide="x"></i>' : '<i data-lucide="menu"></i>';
-    if (window.lucide) window.lucide.createIcons();
-  });
-  navLinks.forEach(link => link.addEventListener("click", closeMenu));
-  window.addEventListener("keydown", event => {
-    if (event.key === "Escape") closeMenu();
-  });
+  if (!nav) return;
+
+  const isOpen = !nav.classList.contains("open");
+
+  nav.classList.toggle("open", isOpen);
+  document.body.classList.toggle("menu-open", isOpen);
+
+  menuToggle.setAttribute("aria-expanded", String(isOpen));
+
+  menuToggle.setAttribute(
+    "aria-label",
+    isOpen ? "Close navigation" : "Open navigation"
+  );
+
+  menuToggle.innerHTML = isOpen
+    ? '<i data-lucide="x"></i>'
+    : '<i data-lucide="menu"></i>';
+
+  if (window.lucide) {
+    window.lucide.createIcons();
+  }
+});
+
+/* Close menu after selecting a navigation link */
+navLinks.forEach(link => {
+  link.addEventListener("click", closeMenu);
+});
+
+/* Close menu using Escape */
+window.addEventListener("keydown", event => {
+  if (event.key === "Escape") {
+    closeMenu();
+  }
+});
+
+/* Close menu when switching back to desktop */
+window.addEventListener("resize", () => {
+  if (window.innerWidth > 800) {
+    closeMenu();
+  }
+});
 
   // Back-to-top action.
   backToTop?.addEventListener("click", () => window.scrollTo({ top: 0, behavior: "smooth" }));

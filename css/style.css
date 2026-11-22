@@ -1,5 +1,5 @@
 /* =========================================================
-   SUKHALAYA — Premium wellness website
+   GURUJI KA GYAN — Premium wellness website
    Edit the design tokens below to change the visual identity.
    ========================================================= */
 :root {
@@ -234,36 +234,162 @@ h2 em { color: var(--sage-dark); }
   .contact-grid { gap: 60px; }
   .footer-main { gap: 30px; }
 }
+
+/* =========================================
+   GURUJI KA GYAN — RESPONSIVE MOBILE NAV
+   ========================================= */
+
 @media (max-width: 800px) {
-  .section-pad { padding: 85px 0; }
-  .site-header { height: 76px; }
-  .menu-toggle { display: grid; place-items: center; z-index: 52; }
-  .primary-nav { position: fixed; inset: 0; display: flex; flex-direction: column; justify-content: center; gap: 27px; background: var(--cream); color: var(--forest); opacity: 0; visibility: hidden; transform: translateY(-10px); transition: all .25s; }
-  .primary-nav.open { opacity: 1; visibility: visible; transform: translateY(0); }
-  .nav-link { font-family: var(--serif); font-size: 27px; font-weight: 400; }
-  .nav-link.active::after { display: none; }
-  .nav-cta { margin-top: 10px; }
-  .hero { min-height: 700px; height: 88svh; }
-  .hero-content { padding-top: 60px; }
-  .hero h1 { font-size: clamp(62px, 12vw, 90px); }
-  .hero-note { margin-top: 65px; }
-  .intro-grid { grid-template-columns: 1fr 1fr; gap: 30px; }
-  .intro-aside { display: none; }
-  .intro-main { grid-column: 1 / -1; }
-  .intro-art { max-width: 570px; grid-column: 1 / -1; margin: 15px auto 0; }
-  .intro-art img { height: 380px; }
-  .section-heading { align-items: flex-start; flex-direction: column; gap: 18px; margin-bottom: 38px; }
-  .heading-description { max-width: 520px; }
-  .offering-grid, .journey-grid { grid-template-columns: repeat(2, 1fr); }
-  .offering-card:last-child, .journey-card:last-child { grid-column: auto; }
-  .about-grid { grid-template-columns: 1fr; gap: 55px; }
-  .about-photo { max-width: 560px; }
-  .about-photo img { height: 440px; }
-  .about-copy { max-width: 650px; }
-  .contact-grid { grid-template-columns: 1fr; gap: 45px; }
-  .contact-copy { max-width: 600px; }
-  .footer-main { grid-template-columns: 1.5fr 1fr 1fr; }
-  .footer-social { grid-column: 1 / -1; }
+
+  .site-header {
+    position: sticky;
+    top: 0;
+    height: 76px;
+    z-index: 1000;
+    background: #FFF9EF;
+    color: #7D100B;
+  }
+
+  .nav-wrap {
+    height: 76px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .menu-toggle {
+    display: grid;
+    place-items: center;
+    position: relative;
+    z-index: 1002;
+    width: 46px;
+    height: 46px;
+    padding: 10px;
+    border: none;
+    background: transparent;
+    color: #7D100B;
+    cursor: pointer;
+  }
+
+  .menu-toggle svg {
+    width: 27px;
+    height: 27px;
+    stroke-width: 1.8;
+  }
+
+  /* Mobile navigation panel */
+  .primary-nav {
+    position: fixed;
+    top: 76px;
+    left: 0;
+    right: 0;
+    bottom: 0;
+
+    width: 100%;
+    height: calc(100dvh - 76px);
+
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    justify-content: flex-start;
+
+    gap: 0;
+    padding: 24px 26px 36px;
+
+    background: #F8EEDC;
+    color: #542817;
+
+    overflow-y: auto;
+    overscroll-behavior: contain;
+
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+
+    transform: translateY(-10px);
+    transition:
+      opacity 0.25s ease,
+      transform 0.25s ease,
+      visibility 0.25s ease;
+
+    z-index: 1001;
+  }
+
+  .primary-nav.open {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+    transform: translateY(0);
+  }
+
+  /* Navigation links */
+  .primary-nav .nav-link {
+    display: block;
+    width: 100%;
+    padding: 17px 4px;
+
+    font-family: var(--sans);
+    font-size: 16px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+
+    color: #604936;
+    border-bottom: 1px solid rgba(125, 16, 11, 0.12);
+  }
+
+  .primary-nav .nav-link.active::after {
+    display: none;
+  }
+
+  /* Language selector */
+  .primary-nav .language-switch {
+    align-self: flex-start;
+    margin-top: 24px;
+    padding: 10px 14px;
+    font-size: 13px;
+  }
+
+  /* Main CTA */
+  .primary-nav .nav-cta {
+    display: flex;
+    width: 100%;
+    min-height: 58px;
+    margin-top: 24px;
+
+    justify-content: center;
+    border-radius: 50px;
+
+    background: #7D100B;
+    color: #FFF9EF;
+
+    font-size: 14px;
+    letter-spacing: 1.5px;
+  }
+
+  .primary-nav .nav-cta:hover {
+    background: #9B2418;
+    transform: none;
+  }
+
+  /* Prevent background scrolling */
+  body.menu-open {
+    overflow: hidden;
+    touch-action: none;
+  }
+}
+
+/* Small mobile screens */
+@media (max-width: 380px) {
+  .primary-nav {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  .primary-nav .nav-link {
+    font-size: 14px;
+    padding: 15px 4px;
+  }
 }
 @media (max-width: 560px) {
   .container { width: calc(100% - 40px); }
@@ -355,12 +481,7 @@ h2 em { color: var(--sage-dark); }
 .temple-copy .lead { max-width: 510px; }
 .image-credit { margin-top: 22px; color: #927F6B; font-size: 9px; }
 .image-credit a { text-decoration: underline; text-underline-offset: 3px; }
-@media (max-width: 800px) {
-  .temple-grid { grid-template-columns: 1fr; gap: 42px; }
-  .temple-image-wrap { max-width: 560px; }
-  .temple-image { height: 440px; }
-  .language-switch { order: -1; }
-}
+
 @media (max-width: 560px) {
   .language-switch { gap: 6px; }
   .temple-image { height: 370px; }

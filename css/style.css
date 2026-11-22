@@ -1,5 +1,5 @@
 /* =========================================================
-   SUKHALAYA — Premium wellness website
+   GURUJI KA GYAN — Premium wellness website
    Edit the design tokens below to change the visual identity.
    ========================================================= */
 :root {
@@ -234,36 +234,162 @@ h2 em { color: var(--sage-dark); }
   .contact-grid { gap: 60px; }
   .footer-main { gap: 30px; }
 }
+
+/* =========================================
+   GURUJI KA GYAN — RESPONSIVE MOBILE NAV
+   ========================================= */
+
 @media (max-width: 800px) {
-  .section-pad { padding: 85px 0; }
-  .site-header { height: 76px; }
-  .menu-toggle { display: grid; place-items: center; z-index: 52; }
-  .primary-nav { position: fixed; inset: 0; display: flex; flex-direction: column; justify-content: center; gap: 27px; background: var(--cream); color: var(--forest); opacity: 0; visibility: hidden; transform: translateY(-10px); transition: all .25s; }
-  .primary-nav.open { opacity: 1; visibility: visible; transform: translateY(0); }
-  .nav-link { font-family: var(--serif); font-size: 27px; font-weight: 400; }
-  .nav-link.active::after { display: none; }
-  .nav-cta { margin-top: 10px; }
-  .hero { min-height: 700px; height: 88svh; }
-  .hero-content { padding-top: 60px; }
-  .hero h1 { font-size: clamp(62px, 12vw, 90px); }
-  .hero-note { margin-top: 65px; }
-  .intro-grid { grid-template-columns: 1fr 1fr; gap: 30px; }
-  .intro-aside { display: none; }
-  .intro-main { grid-column: 1 / -1; }
-  .intro-art { max-width: 570px; grid-column: 1 / -1; margin: 15px auto 0; }
-  .intro-art img { height: 380px; }
-  .section-heading { align-items: flex-start; flex-direction: column; gap: 18px; margin-bottom: 38px; }
-  .heading-description { max-width: 520px; }
-  .offering-grid, .journey-grid { grid-template-columns: repeat(2, 1fr); }
-  .offering-card:last-child, .journey-card:last-child { grid-column: auto; }
-  .about-grid { grid-template-columns: 1fr; gap: 55px; }
-  .about-photo { max-width: 560px; }
-  .about-photo img { height: 440px; }
-  .about-copy { max-width: 650px; }
-  .contact-grid { grid-template-columns: 1fr; gap: 45px; }
-  .contact-copy { max-width: 600px; }
-  .footer-main { grid-template-columns: 1.5fr 1fr 1fr; }
-  .footer-social { grid-column: 1 / -1; }
+
+  .site-header {
+    position: sticky;
+    top: 0;
+    height: 76px;
+    z-index: 1000;
+    background: #FFF9EF;
+    color: #7D100B;
+  }
+
+  .nav-wrap {
+    height: 76px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .menu-toggle {
+    display: grid;
+    place-items: center;
+    position: relative;
+    z-index: 1002;
+    width: 46px;
+    height: 46px;
+    padding: 10px;
+    border: none;
+    background: transparent;
+    color: #7D100B;
+    cursor: pointer;
+  }
+
+  .menu-toggle svg {
+    width: 27px;
+    height: 27px;
+    stroke-width: 1.8;
+  }
+
+  /* Mobile navigation panel */
+  .primary-nav {
+    position: fixed;
+    top: 76px;
+    left: 0;
+    right: 0;
+    bottom: 0;
+
+    width: 100%;
+    height: calc(100dvh - 76px);
+
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    justify-content: flex-start;
+
+    gap: 0;
+    padding: 24px 26px 36px;
+
+    background: #F8EEDC;
+    color: #542817;
+
+    overflow-y: auto;
+    overscroll-behavior: contain;
+
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+
+    transform: translateY(-10px);
+    transition:
+      opacity 0.25s ease,
+      transform 0.25s ease,
+      visibility 0.25s ease;
+
+    z-index: 1001;
+  }
+
+  .primary-nav.open {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+    transform: translateY(0);
+  }
+
+  /* Navigation links */
+  .primary-nav .nav-link {
+    display: block;
+    width: 100%;
+    padding: 17px 4px;
+
+    font-family: var(--sans);
+    font-size: 16px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+
+    color: #604936;
+    border-bottom: 1px solid rgba(125, 16, 11, 0.12);
+  }
+
+  .primary-nav .nav-link.active::after {
+    display: none;
+  }
+
+  /* Language selector */
+  .primary-nav .language-switch {
+    align-self: flex-start;
+    margin-top: 24px;
+    padding: 10px 14px;
+    font-size: 13px;
+  }
+
+  /* Main CTA */
+  .primary-nav .nav-cta {
+    display: flex;
+    width: 100%;
+    min-height: 58px;
+    margin-top: 24px;
+
+    justify-content: center;
+    border-radius: 50px;
+
+    background: #7D100B;
+    color: #FFF9EF;
+
+    font-size: 14px;
+    letter-spacing: 1.5px;
+  }
+
+  .primary-nav .nav-cta:hover {
+    background: #9B2418;
+    transform: none;
+  }
+
+  /* Prevent background scrolling */
+  body.menu-open {
+    overflow: hidden;
+    touch-action: none;
+  }
+}
+
+/* Small mobile screens */
+@media (max-width: 380px) {
+  .primary-nav {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  .primary-nav .nav-link {
+    font-size: 14px;
+    padding: 15px 4px;
+  }
 }
 @media (max-width: 560px) {
   .container { width: calc(100% - 40px); }
@@ -366,4 +492,206 @@ h2 em { color: var(--sage-dark); }
   .temple-image { height: 370px; }
   .temple-image-wrap { padding-left: 15px; }
   .temple-image-label { left: 30px; bottom: 40px; }
+}
+
+/* =========================================================
+   GURUJI KA GYAN — Sukhalaya-inspired ivory / terracotta theme
+   ========================================================= */
+:root {
+  --cream: #FDF9F2;
+  --paper: #FFFCF7;
+  --sage: #E6B85D;
+  --sage-dark: #96351C;
+  --forest: #96351C;
+  --forest-deep: #57240D;
+  --ink: #57240D;
+  --muted: #745D4B;
+  --line: #E8D8C5;
+  --sand: #F2DCAF;
+  --serif: "Cormorant Garamond", Georgia, serif;
+  --sans: "Lato", Arial, sans-serif;
+  --shadow: 0 16px 44px rgba(87,36,13,.08);
+  --gold: #D99A35;
+  --saffron: #D96B2B;
+  --maroon: #96351C;
+  --earth: #57240D;
+}
+body { background: var(--cream); color: var(--ink); }
+.container { width: min(1210px, calc(100% - 64px)); }
+.section-pad { padding: 104px 0; }
+.site-header, .site-header:not(.scrolled), .site-header.scrolled {
+  position: fixed; inset: 0 0 auto; height: 92px; color: var(--earth);
+  background: rgba(253,249,242,.97); border-bottom: 1px solid rgba(150,53,28,.12);
+  box-shadow: 0 3px 18px rgba(87,36,13,.035); backdrop-filter: blur(14px);
+}
+.nav-wrap { gap: 24px; }
+.brand-logo { width: 62px; height: 62px; border-radius: 50%; background: #fffaf1; }
+.brand .brand-name { color: var(--maroon); font-family: var(--serif); font-size: 25px; font-weight: 700; letter-spacing: -.3px; }
+.brand .brand-name small { color: #A85B2D; font-family: var(--sans); font-size: 8px; letter-spacing: 1.8px; }
+.primary-nav { gap: 20px; padding: 8px 13px; border: 1px solid #E9DED2; border-radius: 999px; background: rgba(255,252,247,.92); box-shadow: 0 4px 16px rgba(87,36,13,.035); }
+.nav-link { color: var(--earth); font-size: 10px; letter-spacing: .9px; }
+.nav-link.active::after { display: none; }
+.language-switch { border: 0; padding: 5px 3px; font-size: 10px; }
+.nav-cta, .site-header.scrolled .nav-cta { min-height: 40px; padding: 0 17px; border-radius: 999px; background: var(--maroon); color: #fffaf3; }
+.button { border-radius: 999px; letter-spacing: 1px; }
+.button-light { background: var(--maroon); color: #fffaf3; }
+.button-light:hover { background: #7D2A17; }
+.button-dark { background: var(--maroon); color: #fffaf3; }
+.button-dark:hover { background: #7D2A17; }
+
+/* Centered, typography-led hero inspired by the reference page */
+.hero {
+  min-height: 690px; height: auto; margin-top: 92px; padding: 76px 0 82px;
+  display: flex; align-items: center; justify-content: center;
+  background: #F2DCAF; color: var(--earth); text-align: center;
+}
+.hero-image, .hero-shade { display: none; }
+.hero-content { z-index: 1; max-width: 900px; padding: 0 20px; }
+.hero-hindi { margin: 0 0 18px; color: var(--maroon); font-family: "Noto Serif Devanagari", serif; font-size: 19px; font-weight: 600; }
+.hero .eyebrow { justify-content: center; margin: 0 0 14px; color: #A44A27; font-size: 9px; letter-spacing: 2px; }
+.hero .eyebrow > span { width: 22px; background: #C17B45; }
+.hero h1 { margin: 0; color: #57240D; font-family: var(--serif); font-size: clamp(64px, 7vw, 88px); line-height: .98; font-weight: 700; letter-spacing: -1.5px; }
+.hero-subtitle { margin: 5px 0 24px; color: var(--maroon); font-family: var(--serif); font-size: clamp(28px, 3vw, 38px); font-weight: 600; line-height: 1.15; }
+.hero-copy { max-width: 700px; margin: 0 auto 28px; color: #6D5542; font-size: 16px; line-height: 1.9; }
+.hero-actions { justify-content: center; gap: 18px; }
+.hero-actions .button { min-height: 48px; }
+.text-link-light { color: var(--maroon); }
+.hero-mantra { margin: 28px 0 0; color: #B75B2D; font-family: "Noto Serif Devanagari", serif; font-size: 18px; letter-spacing: 2px; }
+.hero-note { display: none; }
+.hero-scroll { display: none; }
+h2, .section-heading h2, .contact-copy h2 { color: var(--maroon); font-family: var(--serif); font-weight: 700; }
+h2 em, .hero h1 em { color: #C16A36; }
+.eyebrow { color: #A44A27; }
+.intro, .journeys, .contact { background: #FFFCF7; }
+.temple-feature { background: #F8E8C8; }
+.offerings { background: #FCF0C8; }
+.about-band { background: #F5E4C7; }
+.quote-band { background-attachment: scroll; }
+.quote-overlay { background: rgba(87,36,13,.72); }
+.quote-content em, .closing-content h2 em { color: #F2DCAF; }
+.closing-cta { background: #7E2C18; }
+.tab-button.active, .tab-button:hover { background: var(--maroon); border-color: var(--maroon); }
+.pill { border-radius: 999px; color: var(--maroon); }
+.offering-card, .journey-card { border-color: #EADBC8; border-radius: 10px; overflow: hidden; }
+.contact-form { border: 1px solid #EADBC8; border-radius: 12px; box-shadow: 0 12px 42px rgba(87,36,13,.055); }
+.form-row input, .form-row textarea, .form-row select { border-radius: 8px; background: #FFFAF2; }
+.form-row input:focus, .form-row textarea:focus, .form-row select:focus { border-color: var(--maroon); box-shadow: 0 0 0 3px rgba(150,53,28,.10); }
+.site-footer { background: #54240F; }
+.footer-column h4, .footer-social h4 { color: #F0C982; }
+.footer-heart { color: #E5B65F; }
+.back-to-top { background: var(--maroon); border-radius: 50%; }
+
+@media (max-width: 1050px) {
+  .primary-nav { gap: 12px; }
+  .nav-wrap { gap: 12px; }
+  .brand .brand-name { font-size: 22px; }
+}
+@media (max-width: 800px) {
+  .site-header, .site-header:not(.scrolled), .site-header.scrolled { height: 78px; }
+  .brand-logo { width: 54px; height: 54px; }
+  .brand .brand-name { font-size: 20px; }
+  .menu-toggle { color: var(--maroon); }
+  .primary-nav { inset: 0; border: 0; border-radius: 0; box-shadow: none; background: var(--cream); color: var(--maroon); }
+  .primary-nav.open { display: flex; }
+  .primary-nav .nav-link { color: var(--maroon); }
+  .hero { margin-top: 78px; min-height: 610px; padding: 72px 0; }
+  .hero-content { padding: 0 8px; }
+  .hero-copy { max-width: 580px; }
+  .hero-actions { align-items: center; flex-direction: row; }
+  .temple-grid { gap: 42px; }
+}
+@media (max-width: 560px) {
+  .container { width: calc(100% - 38px); }
+  .site-header, .site-header:not(.scrolled), .site-header.scrolled { height: 72px; }
+  .brand-logo { width: 48px; height: 48px; }
+  .brand .brand-name { font-size: 18px; }
+  .brand .brand-name small { font-size: 7px; }
+  .hero { margin-top: 72px; min-height: 600px; padding: 64px 0; }
+  .hero-hindi { font-size: 17px; }
+  .hero h1 { font-size: clamp(52px, 14vw, 70px); letter-spacing: -1px; }
+  .hero-subtitle { font-size: 29px; margin-bottom: 18px; }
+  .hero-copy { font-size: 14px; line-height: 1.8; }
+  .hero-actions { flex-direction: column; gap: 16px; }
+  .hero-mantra { font-size: 16px; }
+  .section-pad { padding: 72px 0; }
+}
+
+/* =========================================================
+   MOBILE NAVIGATION FIX — flow-based expandable menu
+   Keeps the menu inside the header and pushes page content
+   down instead of overlaying the hero or clipping at the top.
+   ========================================================= */
+@media (max-width: 800px) {
+  .site-header,
+  .site-header:not(.scrolled),
+  .site-header.scrolled {
+    position: sticky;
+    top: 0;
+    inset: auto;
+    height: auto;
+    min-height: 72px;
+    z-index: 100;
+    overflow: visible;
+    -webkit-backdrop-filter: none;
+    backdrop-filter: none;
+  }
+}
+
+
+/* =========================================
+   GURUJI KA GYAN — TOP NAVIGATION SIZE
+   Sukhalaya reference: 87px height, full width
+   ========================================= */
+
+.site-header,
+.site-header:not(.scrolled),
+.site-header.scrolled {
+    box-sizing: border-box;
+
+    width: 100%;
+    height: 87px;
+    min-height: 87px;
+
+    position: relative;
+    top: auto;
+    left: auto;
+    right: auto;
+
+    margin: 0;
+    padding: 0;
+
+    z-index: 100;
+}
+
+/* Header content alignment */
+.site-header .nav-wrap {
+    width: min(1600px, calc(100% - 64px));
+    height: 100%;
+    min-height: 87px;
+
+    margin: 0 auto;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+/* Mobile and tablet */
+@media (max-width: 800px) {
+    .site-header,
+    .site-header:not(.scrolled),
+    .site-header.scrolled {
+        height: 76px;
+        min-height: 76px;
+    }
+
+    .site-header .nav-wrap {
+        width: calc(100% - 32px);
+        min-height: 76px;
+    }
+}
+
+/* Remove old hero spacing */
+.hero {
+    margin-top: 0 !important;
 }

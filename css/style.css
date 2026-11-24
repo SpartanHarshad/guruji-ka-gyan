@@ -1,5 +1,5 @@
 /* =========================================================
-   GURUJI KA GYAN — Premium wellness website
+   SUKHALAYA — Premium wellness website
    Edit the design tokens below to change the visual identity.
    ========================================================= */
 :root {
@@ -234,162 +234,36 @@ h2 em { color: var(--sage-dark); }
   .contact-grid { gap: 60px; }
   .footer-main { gap: 30px; }
 }
-
-/* =========================================
-   GURUJI KA GYAN — RESPONSIVE MOBILE NAV
-   ========================================= */
-
 @media (max-width: 800px) {
-
-  .site-header {
-    position: sticky;
-    top: 0;
-    height: 76px;
-    z-index: 1000;
-    background: #FFF9EF;
-    color: #7D100B;
-  }
-
-  .nav-wrap {
-    height: 76px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-  }
-
-  .menu-toggle {
-    display: grid;
-    place-items: center;
-    position: relative;
-    z-index: 1002;
-    width: 46px;
-    height: 46px;
-    padding: 10px;
-    border: none;
-    background: transparent;
-    color: #7D100B;
-    cursor: pointer;
-  }
-
-  .menu-toggle svg {
-    width: 27px;
-    height: 27px;
-    stroke-width: 1.8;
-  }
-
-  /* Mobile navigation panel */
-  .primary-nav {
-    position: fixed;
-    top: 76px;
-    left: 0;
-    right: 0;
-    bottom: 0;
-
-    width: 100%;
-    height: calc(100dvh - 76px);
-
-    display: flex;
-    flex-direction: column;
-    align-items: stretch;
-    justify-content: flex-start;
-
-    gap: 0;
-    padding: 24px 26px 36px;
-
-    background: #F8EEDC;
-    color: #542817;
-
-    overflow-y: auto;
-    overscroll-behavior: contain;
-
-    opacity: 0;
-    visibility: hidden;
-    pointer-events: none;
-
-    transform: translateY(-10px);
-    transition:
-      opacity 0.25s ease,
-      transform 0.25s ease,
-      visibility 0.25s ease;
-
-    z-index: 1001;
-  }
-
-  .primary-nav.open {
-    opacity: 1;
-    visibility: visible;
-    pointer-events: auto;
-    transform: translateY(0);
-  }
-
-  /* Navigation links */
-  .primary-nav .nav-link {
-    display: block;
-    width: 100%;
-    padding: 17px 4px;
-
-    font-family: var(--sans);
-    font-size: 16px;
-    font-weight: 700;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-
-    color: #604936;
-    border-bottom: 1px solid rgba(125, 16, 11, 0.12);
-  }
-
-  .primary-nav .nav-link.active::after {
-    display: none;
-  }
-
-  /* Language selector */
-  .primary-nav .language-switch {
-    align-self: flex-start;
-    margin-top: 24px;
-    padding: 10px 14px;
-    font-size: 13px;
-  }
-
-  /* Main CTA */
-  .primary-nav .nav-cta {
-    display: flex;
-    width: 100%;
-    min-height: 58px;
-    margin-top: 24px;
-
-    justify-content: center;
-    border-radius: 50px;
-
-    background: #7D100B;
-    color: #FFF9EF;
-
-    font-size: 14px;
-    letter-spacing: 1.5px;
-  }
-
-  .primary-nav .nav-cta:hover {
-    background: #9B2418;
-    transform: none;
-  }
-
-  /* Prevent background scrolling */
-  body.menu-open {
-    overflow: hidden;
-    touch-action: none;
-  }
-}
-
-/* Small mobile screens */
-@media (max-width: 380px) {
-  .primary-nav {
-    padding-left: 20px;
-    padding-right: 20px;
-  }
-
-  .primary-nav .nav-link {
-    font-size: 14px;
-    padding: 15px 4px;
-  }
+  .section-pad { padding: 85px 0; }
+  .site-header { height: 76px; }
+  .menu-toggle { display: grid; place-items: center; z-index: 52; }
+  .primary-nav { position: fixed; inset: 0; display: flex; flex-direction: column; justify-content: center; gap: 27px; background: var(--cream); color: var(--forest); opacity: 0; visibility: hidden; transform: translateY(-10px); transition: all .25s; }
+  .primary-nav.open { opacity: 1; visibility: visible; transform: translateY(0); }
+  .nav-link { font-family: var(--serif); font-size: 27px; font-weight: 400; }
+  .nav-link.active::after { display: none; }
+  .nav-cta { margin-top: 10px; }
+  .hero { min-height: 700px; height: 88svh; }
+  .hero-content { padding-top: 60px; }
+  .hero h1 { font-size: clamp(62px, 12vw, 90px); }
+  .hero-note { margin-top: 65px; }
+  .intro-grid { grid-template-columns: 1fr 1fr; gap: 30px; }
+  .intro-aside { display: none; }
+  .intro-main { grid-column: 1 / -1; }
+  .intro-art { max-width: 570px; grid-column: 1 / -1; margin: 15px auto 0; }
+  .intro-art img { height: 380px; }
+  .section-heading { align-items: flex-start; flex-direction: column; gap: 18px; margin-bottom: 38px; }
+  .heading-description { max-width: 520px; }
+  .offering-grid, .journey-grid { grid-template-columns: repeat(2, 1fr); }
+  .offering-card:last-child, .journey-card:last-child { grid-column: auto; }
+  .about-grid { grid-template-columns: 1fr; gap: 55px; }
+  .about-photo { max-width: 560px; }
+  .about-photo img { height: 440px; }
+  .about-copy { max-width: 650px; }
+  .contact-grid { grid-template-columns: 1fr; gap: 45px; }
+  .contact-copy { max-width: 600px; }
+  .footer-main { grid-template-columns: 1.5fr 1fr 1fr; }
+  .footer-social { grid-column: 1 / -1; }
 }
 @media (max-width: 560px) {
   .container { width: calc(100% - 40px); }
@@ -635,63 +509,626 @@ h2 em, .hero h1 em { color: #C16A36; }
     -webkit-backdrop-filter: none;
     backdrop-filter: none;
   }
+
+  .site-header .nav-wrap {
+    height: auto;
+    min-height: 72px;
+    width: calc(100% - 38px);
+    margin-inline: auto;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0 12px;
+  }
+
+  .site-header .brand {
+    min-width: 0;
+    max-width: calc(100% - 60px);
+  }
+
+  .site-header .brand-logo {
+    width: 48px;
+    height: 48px;
+    flex: 0 0 48px;
+  }
+
+  .site-header .brand .brand-name {
+    font-size: clamp(16px, 4.5vw, 19px);
+    line-height: 1.05;
+    white-space: nowrap;
+  }
+
+  .site-header .brand .brand-name small {
+    font-size: 7px;
+    letter-spacing: 1.3px;
+  }
+
+  .site-header .menu-toggle {
+    display: grid;
+    place-items: center;
+    flex: 0 0 44px;
+    width: 44px;
+    height: 44px;
+    padding: 8px;
+    color: var(--maroon);
+    border: 1px solid rgba(150, 53, 28, .18);
+    border-radius: 50%;
+    background: #fffaf3;
+    z-index: 2;
+  }
+
+  .site-header .menu-toggle svg {
+    width: 23px;
+    height: 23px;
+  }
+
+  .site-header .primary-nav {
+    position: static;
+    inset: auto;
+    order: 3;
+    flex: 0 0 calc(100% + 38px);
+    width: calc(100% + 38px);
+    max-height: 0;
+    min-height: 0;
+    margin-inline: -19px;
+    padding: 0 24px;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    justify-content: flex-start;
+    gap: 0;
+    overflow: hidden;
+    opacity: 0;
+    visibility: hidden;
+    transform: none;
+    border: 0;
+    border-top: 1px solid transparent;
+    border-radius: 0;
+    box-shadow: none;
+    background: #FDF9F2;
+    color: var(--earth);
+    transition: max-height .32s ease, opacity .2s ease, padding .32s ease, border-color .2s ease, visibility .2s ease;
+  }
+
+  .site-header .primary-nav.open {
+    max-height: min(560px, calc(100dvh - 72px));
+    padding: 12px 24px 24px;
+    overflow-y: auto;
+    overscroll-behavior: contain;
+    opacity: 1;
+    visibility: visible;
+    border-top-color: #EADBC8;
+  }
+
+  .site-header .primary-nav .nav-link {
+    display: flex;
+    align-items: center;
+    min-height: 54px;
+    width: 100%;
+    padding: 13px 0;
+    color: var(--earth);
+    font-family: var(--sans);
+    font-size: 14px;
+    font-weight: 800;
+    line-height: 1.35;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    border-bottom: 1px solid rgba(87, 36, 13, .09);
+  }
+
+  .site-header .primary-nav .nav-link.active::after {
+    display: none;
+  }
+
+  .site-header .language-switch {
+    display: flex;
+    align-self: flex-start;
+    margin: 16px 0 12px;
+    padding: 7px 10px;
+    border: 1px solid #E9DED2;
+    border-radius: 999px;
+    background: #FFFCF7;
+  }
+
+  .site-header .nav-cta,
+  .site-header.scrolled .nav-cta {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    min-height: 52px;
+    margin: 8px 0 0;
+    padding: 12px 18px;
+    border-radius: 999px;
+    background: var(--maroon);
+    color: #fffaf3;
+    text-align: center;
+  }
+
+  body.menu-open {
+    overflow: hidden;
+  }
+
+  .hero {
+    margin-top: 0;
+  }
+}
+
+@media (max-width: 560px) {
+  .site-header .nav-wrap {
+    width: calc(100% - 32px);
+    min-height: 72px;
+  }
+
+  .site-header .primary-nav {
+    flex-basis: calc(100% + 32px);
+    width: calc(100% + 32px);
+    margin-inline: -16px;
+  }
+
+  .site-header .primary-nav.open {
+    padding-inline: 20px;
+  }
+
+  .site-header .primary-nav .nav-link {
+    font-size: 13px;
+    min-height: 50px;
+  }
 }
 
 
-/* =========================================
-   GURUJI KA GYAN — TOP NAVIGATION SIZE
-   Sukhalaya reference: 87px height, full width
-   ========================================= */
+
+/* =========================================================
+   GURUJI KA GYAN — DESKTOP TOP BAR
+   Refined centered navigation pill with balanced side areas.
+   Keeps the existing mobile menu and bilingual controls.
+   ========================================================= */
 
 .site-header,
 .site-header:not(.scrolled),
 .site-header.scrolled {
-    box-sizing: border-box;
-
-    width: 100%;
-    height: 87px;
-    min-height: 87px;
-
-    position: relative;
-    top: auto;
-    left: auto;
-    right: auto;
-
-    margin: 0;
-    padding: 0;
-
-    z-index: 100;
+  position: sticky;
+  inset: auto;
+  top: 0;
+  z-index: 1000;
+  width: 100%;
+  height: 104px;
+  color: var(--earth);
+  background: #FFFAF4;
+  border-bottom: 1px solid #EEDFCB;
+  box-shadow: 0 3px 18px rgba(84, 40, 23, .035);
+  -webkit-backdrop-filter: none;
+  backdrop-filter: none;
 }
 
-/* Header content alignment */
 .site-header .nav-wrap {
-    width: min(1600px, calc(100% - 64px));
-    height: 100%;
-    min-height: 87px;
+  width: min(1600px, calc(100% - 64px));
+  height: 100%;
+  margin-inline: auto;
+  display: grid;
+  grid-template-columns: minmax(190px, 1fr) auto minmax(250px, 1fr);
+  align-items: center;
+  gap: 24px;
+}
 
-    margin: 0 auto;
+.site-header .brand {
+  min-width: 0;
+  justify-self: start;
+  gap: 10px;
+}
 
+.site-header .brand-logo {
+  width: 58px;
+  height: 58px;
+  object-fit: contain;
+  flex: 0 0 auto;
+}
+
+.site-header .brand .brand-name {
+  color: var(--maroon);
+  font-family: var(--serif);
+  font-size: 21px;
+  font-weight: 600;
+  line-height: 1.05;
+  letter-spacing: -.45px;
+  white-space: nowrap;
+}
+
+.site-header .brand .brand-name small {
+  display: block;
+  margin-top: 6px;
+  color: #9B6A27;
+  font-family: var(--sans);
+  font-size: 8px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+}
+
+/* Centered rounded navigation container */
+.site-header .primary-nav {
+  position: static;
+  inset: auto;
+  justify-self: center;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 0;
+  padding: 6px;
+  border: 1px solid #EDE2D8;
+  border-radius: 999px;
+  background: #FFFCF8;
+  box-shadow: 0 7px 22px rgba(84, 40, 23, .035);
+  color: #604936;
+  opacity: 1;
+  visibility: visible;
+  transform: none;
+}
+
+.site-header .primary-nav .nav-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 42px;
+  padding: 0 15px;
+  border: 0;
+  color: #604936;
+  font-family: var(--sans);
+  font-size: 11px;
+  font-weight: 800;
+  line-height: 1;
+  letter-spacing: 1.05px;
+  text-transform: uppercase;
+  white-space: nowrap;
+  opacity: 1;
+  transition: color .2s ease, background .2s ease;
+}
+
+.site-header .primary-nav .nav-link:hover,
+.site-header .primary-nav .nav-link.active {
+  color: var(--maroon);
+}
+
+.site-header .primary-nav .nav-link.active::after {
+  display: none;
+}
+
+.site-header .header-actions {
+  justify-self: end;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 13px;
+  min-width: 0;
+}
+
+.site-header .language-switch {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  min-height: 42px;
+  margin: 0;
+  padding: 0 13px;
+  border: 1px solid #EDE2D8;
+  border-radius: 999px;
+  background: #FFFCF8;
+  color: var(--maroon);
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: .5px;
+  white-space: nowrap;
+}
+
+.site-header .language-button {
+  padding: 3px;
+  border: 0;
+  background: transparent;
+  color: inherit;
+  font: inherit;
+  cursor: pointer;
+  opacity: .65;
+}
+
+.site-header .language-button.active {
+  color: var(--maroon);
+  opacity: 1;
+}
+
+.site-header .nav-cta,
+.site-header.scrolled .nav-cta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 46px;
+  margin: 0;
+  padding: 0 23px;
+  border: 1px solid var(--maroon);
+  border-radius: 999px;
+  background: var(--maroon);
+  color: #FFF9EF;
+  font-family: var(--sans);
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 1.25px;
+  text-transform: uppercase;
+  white-space: nowrap;
+  box-shadow: none;
+}
+
+.site-header .nav-cta:hover,
+.site-header.scrolled .nav-cta:hover {
+  background: #762713;
+  color: #FFF9EF;
+  transform: translateY(-1px);
+}
+
+.site-header .nav-mobile-actions,
+.site-header .menu-toggle {
+  display: none;
+}
+
+/* Medium screens: keep the header uncluttered and use the menu toggle */
+@media (max-width: 1100px) {
+  .site-header,
+  .site-header:not(.scrolled),
+  .site-header.scrolled {
+    height: auto;
+    min-height: 78px;
+  }
+
+  .site-header .nav-wrap {
+    width: calc(100% - 48px);
+    min-height: 78px;
+    height: auto;
     display: flex;
-    align-items: center;
+    flex-wrap: wrap;
     justify-content: space-between;
+    gap: 0 12px;
+  }
+
+  .site-header .menu-toggle {
+    display: grid;
+    place-items: center;
+    flex: 0 0 44px;
+    width: 44px;
+    height: 44px;
+    padding: 8px;
+    border: 1px solid rgba(125, 16, 11, .18);
+    border-radius: 50%;
+    background: #FFFCF8;
+    color: var(--maroon);
+    z-index: 1002;
+  }
+
+  .site-header .menu-toggle svg {
+    width: 23px;
+    height: 23px;
+  }
+
+  .site-header .header-actions {
+    display: none;
+  }
+
+  .site-header .primary-nav {
+    position: static;
+    order: 3;
+    flex: 0 0 calc(100% + 48px);
+    width: calc(100% + 48px);
+    max-height: 0;
+    min-height: 0;
+    margin: 0 -24px;
+    padding: 0 24px;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    justify-content: flex-start;
+    gap: 0;
+    overflow: hidden;
+    border: 0;
+    border-top: 1px solid transparent;
+    border-radius: 0;
+    background: #F8EEDC;
+    box-shadow: none;
+    opacity: 0;
+    visibility: hidden;
+    transform: none;
+    transition: max-height .32s ease, opacity .2s ease, padding .32s ease,
+                border-color .2s ease, visibility .2s ease;
+  }
+
+  .site-header .primary-nav.open {
+    max-height: min(620px, calc(100dvh - 78px));
+    padding: 12px 24px 24px;
+    overflow-y: auto;
+    overscroll-behavior: contain;
+    opacity: 1;
+    visibility: visible;
+    border-top-color: #EADBC8;
+  }
+
+  .site-header .primary-nav .nav-link {
+    display: flex;
+    justify-content: flex-start;
+    width: 100%;
+    min-height: 54px;
+    padding: 13px 4px;
+    border-bottom: 1px solid rgba(87, 36, 13, .10);
+    color: #604936;
+    font-family: var(--sans);
+    font-size: 14px;
+    font-weight: 800;
+    letter-spacing: 1.8px;
+  }
+
+  .site-header .nav-mobile-actions {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 12px;
+    padding-top: 14px;
+  }
+
+  .site-header .nav-mobile-actions .language-switch {
+    align-self: flex-start;
+  }
+
+  .site-header .nav-mobile-actions .nav-cta {
+    display: flex;
+    width: 100%;
+    min-height: 54px;
+    margin: 0;
+  }
+
+  .site-header .menu-toggle[aria-expanded="true"] {
+    background: #F8EEDC;
+  }
 }
 
-/* Mobile and tablet */
-@media (max-width: 800px) {
-    .site-header,
-    .site-header:not(.scrolled),
-    .site-header.scrolled {
-        height: 76px;
-        min-height: 76px;
-    }
+@media (max-width: 560px) {
+  .site-header .nav-wrap {
+    width: calc(100% - 32px);
+    min-height: 72px;
+  }
 
-    .site-header .nav-wrap {
-        width: calc(100% - 32px);
-        min-height: 76px;
-    }
+  .site-header .brand-logo {
+    width: 48px;
+    height: 48px;
+  }
+
+  .site-header .brand .brand-name {
+    font-size: 17px;
+  }
+
+  .site-header .brand .brand-name small {
+    font-size: 7px;
+    letter-spacing: 1.2px;
+  }
+
+  .site-header .primary-nav {
+    flex-basis: calc(100% + 32px);
+    width: calc(100% + 32px);
+    margin-inline: -16px;
+  }
+
+  .site-header .primary-nav.open {
+    padding-inline: 20px;
+  }
+
+  .site-header .primary-nav .nav-link {
+    min-height: 50px;
+    font-size: 13px;
+  }
 }
 
-/* Remove old hero spacing */
+
+/* =========================================================
+   TRILINGUAL TYPOGRAPHY — ENGLISH / HINDI / TELUGU
+   ========================================================= */
+html[lang="hi"] body,
+html[lang="hi"] button,
+html[lang="hi"] input,
+html[lang="hi"] textarea,
+html[lang="hi"] select {
+  font-family: "Noto Serif Devanagari", "Lato", sans-serif;
+}
+
+html[lang="te"] body,
+html[lang="te"] button,
+html[lang="te"] input,
+html[lang="te"] textarea,
+html[lang="te"] select {
+  font-family: "Noto Sans Telugu", "Lato", sans-serif;
+}
+
+html[lang="hi"] .hero h1,
+html[lang="hi"] h2,
+html[lang="hi"] .offering-content h3,
+html[lang="hi"] .journey-info h3,
+html[lang="te"] .hero h1,
+html[lang="te"] h2,
+html[lang="te"] .offering-content h3,
+html[lang="te"] .journey-info h3 {
+  font-family: "Noto Serif Devanagari", "Noto Serif Telugu", "Cormorant Garamond", serif;
+  letter-spacing: 0;
+}
+
+html[lang="te"] .hero h1,
+html[lang="te"] h2,
+html[lang="te"] .offering-content h3,
+html[lang="te"] .journey-info h3 {
+  font-family: "Noto Serif Telugu", "Noto Sans Telugu", serif;
+}
+
+.language-switch {
+  flex-wrap: wrap;
+}
+
+.language-switch .language-button {
+  line-height: 1.5;
+}
+
+@media (max-width: 560px) {
+  .site-header .language-switch {
+    gap: 6px;
+    padding-inline: 10px;
+  }
+}
+
+
+/* =========================================================
+   HEADER SCROLL BEHAVIOUR — MATCH SUKHALAYA
+   The top navigation is part of the normal page flow:
+   it is NOT fixed or sticky and scrolls away with the page.
+   ========================================================= */
+.site-header,
+.site-header:not(.scrolled),
+.site-header.scrolled {
+  position: relative !important;
+  inset: auto !important;
+  top: auto !important;
+  right: auto !important;
+  bottom: auto !important;
+  left: auto !important;
+  width: 100%;
+  height: 104px;
+  min-height: 0;
+  transform: none !important;
+  z-index: 50;
+  background: #FFFAF4;
+  color: var(--earth);
+  border-bottom: 1px solid #EEDFCB;
+  box-shadow: none;
+  -webkit-backdrop-filter: none;
+  backdrop-filter: none;
+}
+
+/* Keep the header content vertically centered on tablet/mobile too. */
+@media (max-width: 1100px) {
+  .site-header,
+  .site-header:not(.scrolled),
+  .site-header.scrolled {
+    position: relative !important;
+    height: auto;
+    min-height: 78px;
+  }
+}
+
+@media (max-width: 560px) {
+  .site-header,
+  .site-header:not(.scrolled),
+  .site-header.scrolled {
+    position: relative !important;
+    min-height: 72px;
+  }
+}
+
+
+/* =========================================================
+   HERO SPACING FIX — HEADER IS IN NORMAL DOCUMENT FLOW
+   Remove the old fixed-header offset that created a blank
+   white band between the navigation and the hero section.
+   ========================================================= */
 .hero {
-    margin-top: 0 !important;
+  margin-top: 0 !important;
 }

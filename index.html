@@ -4,57 +4,86 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Guruji Ka Gyan is a space to explore spiritual wisdom, meditation, Sadhana and mindful living.">
-  <meta name="theme-color" content="#f7f5ef">
-  <title>Guruji Ka Gyan — Wisdom for the Journey Within</title>
+  <meta name="theme-color" content="#FDF9F2">
+  <title>Guruji Ka Gyan — Wisdom for a Meaningful Life</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Lato:wght@400;700;900&family=Noto+Serif+Devanagari:wght@400;500;600;700&family=Noto+Sans+Telugu:wght@400;500;600;700&family=Noto+Serif+Telugu:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
   <script src="https://unpkg.com/lucide@latest"></script>
   <script defer src="js/main.js"></script>
 </head>
 <body>
-  <a class="skip-link" href="#main">Skip to content</a>
+  <a class="skip-link" href="#main" data-i18n="skipContent">Skip to content</a>
 
-  <header class="gkg-header" id="top">
-    <div class="gkg-header-container">
-      <a class="brand" href="#top" aria-label="Guruji Ka Gyan home">
-        <img class="brand-logo" src="assets/images/guruji-ka-gyan-logo.png" alt=""><span class="brand-name">Guruji Ka Gyan<small>ज्ञान · साधना · संस्कृति</small></span>
+  <header class="site-header" id="top">
+    <div class="container nav-wrap">
+      <!-- Brand -->
+      <a class="brand" href="#home" aria-label="Guruji Ka Gyan home">
+        <img class="brand-logo" src="assets/images/guruji-ka-gyan-logo.png" alt="Guruji Ka Gyan">
+        <span class="brand-name">Guruji Ka Gyan<small>ज्ञान · साधना · संस्कृति</small></span>
       </a>
 
-      <button class="menu-toggle" type="button" aria-label="Open navigation" aria-expanded="false" aria-controls="primary-nav">
+      <!-- Mobile menu toggle -->
+      <button class="menu-toggle" type="button"
+              aria-label="Open navigation" aria-expanded="false"
+              aria-controls="primary-nav">
         <i data-lucide="menu"></i>
       </button>
 
+      <!-- Main navigation -->
       <nav class="primary-nav" id="primary-nav" aria-label="Main navigation">
-        <a href="#home" class="nav-link active" data-i18n="navHome">Home</a>
         <a href="#about" class="nav-link" data-i18n="navStory">Our Story</a>
         <a href="#offerings" class="nav-link" data-i18n="navOfferings">Offerings</a>
         <a href="#journeys" class="nav-link" data-i18n="navJourneys">Journeys</a>
         <a href="#contact" class="nav-link" data-i18n="navContact">Contact</a>
+
+        <!-- These controls appear inside the expanded mobile menu -->
+        <div class="nav-mobile-actions">
+          <div class="language-switch" role="group" aria-label="Choose language">
+            <button type="button" class="language-button active" data-lang="en" aria-pressed="true">EN</button>
+            <span aria-hidden="true">|</span>
+            <button type="button" class="language-button" data-lang="hi" aria-pressed="false">हिन्दी</button>
+            <span aria-hidden="true">|</span>
+            <button type="button" class="language-button" data-lang="te" aria-pressed="false">తెలుగు</button>
+          </div>
+          <a href="#journeys" class="button button-small nav-cta" data-i18n="navCta">
+            Explore programs <i data-lucide="arrow-up-right"></i>
+          </a>
+        </div>
+      </nav>
+
+      <!-- Desktop actions -->
+      <div class="header-actions">
         <div class="language-switch" role="group" aria-label="Choose language">
           <button type="button" class="language-button active" data-lang="en" aria-pressed="true">EN</button>
           <span aria-hidden="true">|</span>
           <button type="button" class="language-button" data-lang="hi" aria-pressed="false">हिन्दी</button>
+            <span aria-hidden="true">|</span>
+            <button type="button" class="language-button" data-lang="te" aria-pressed="false">తెలుగు</button>
         </div>
-        <a href="#journeys" class="button button-small nav-cta" data-i18n="navCta">Explore programs <i data-lucide="arrow-up-right"></i></a>
-      </nav>
+        <a href="#journeys" class="button button-small nav-cta" data-i18n="navCta">
+          Explore programs <i data-lucide="arrow-up-right"></i>
+        </a>
+      </div>
     </div>
   </header>
 
   <main id="main">
     <section class="hero" id="home">
-      <div class="hero-image" role="img" aria-label="Quiet mountain landscape at sunrise"></div>
-      <div class="hero-shade"></div>
+      <div class="hero-image" aria-hidden="true"></div>
+      <div class="hero-shade" aria-hidden="true"></div>
       <div class="container hero-content">
-        <p class="eyebrow eyebrow-light"><span></span> <span data-i18n="heroEyebrow">WISDOM · DEVOTION · INNER GROWTH</span></p>
-        <h1 data-i18n-html="heroTitle">Awaken the wisdom<br>within <em>you.</em></h1>
-        <p class="hero-copy" data-i18n="heroCopy">Explore timeless spiritual wisdom, meditation and Sadhana — one insight, one practice, one step at a time.</p>
+        <p class="hero-hindi" lang="hi">गुरुजी का ज्ञान</p>
+        <p class="eyebrow eyebrow-light"><span></span> <span data-i18n="heroEyebrow">WISDOM · DEVOTION · INNER GROWTH</span> <span></span></p>
+        <h1 data-i18n-html="heroTitle">Guruji Ka Gyan</h1>
+        <p class="hero-subtitle" data-i18n="heroSubtitle">Wisdom for a meaningful life</p>
+        <p class="hero-copy" data-i18n="heroCopy">Ancient wisdom, spiritual practices and timeless teachings — made meaningful for everyday life.</p>
         <div class="hero-actions">
           <a class="button button-light" href="#offerings" data-i18n="heroCta">Explore the wisdom <i data-lucide="arrow-up-right"></i></a>
-          <a class="text-link text-link-light" href="#about" data-i18n="heroSecondary">Get to know us <i data-lucide="arrow-down"></i></a>
+          <a class="text-link text-link-light" href="#about" data-i18n="heroSecondary">Discover our purpose <i data-lucide="arrow-down"></i></a>
         </div>
-        <div class="hero-note"><span class="note-line"></span><span>MAKE SPACE FOR WHAT MATTERS</span></div>
+        <p class="hero-mantra" lang="hi">ज्ञान · ध्यान · साधना</p>
       </div>
       <a href="#about" class="hero-scroll" aria-label="Scroll to our story"><i data-lucide="arrow-down"></i></a>
     </section>
@@ -62,19 +91,19 @@
     <section class="intro section-pad" id="about">
       <div class="container intro-grid">
         <div class="intro-aside reveal">
-          <p class="eyebrow">THE GURUJI KA GYAN WAY</p>
-          <span class="vertical-word">MINDFULNESS · BALANCE · WELLBEING</span>
+          <p class="eyebrow" data-i18n="introEyebrow">THE GURUJI KA GYAN WAY</p>
+          <span class="vertical-word" data-i18n="introVertical">MINDFULNESS · BALANCE · WELLBEING</span>
         </div>
         <div class="intro-main reveal">
           <p class="section-kicker" data-i18n="aboutKicker">A little more presence. A little more you.</p>
           <h2 data-i18n-html="aboutTitle">Wisdom is more than knowledge.<br><em>It is a way of living.</em></h2>
-          <p class="lead">Life moves quickly. Guruji Ka Gyan invites you to slow down, listen inward and make room for a more conscious, balanced life.</p>
+          <p class="lead" data-i18n="introLead">Life moves quickly. Guruji Ka Gyan invites you to slow down, listen inward and make room for a more conscious, balanced life.</p>
           <p class="body-copy" data-i18n="aboutBody">Through spiritual reflections, guided practices and learning experiences, we hope to make ancient wisdom meaningful and approachable in everyday life.</p>
           <a href="#contact" class="underlined-link" data-i18n="aboutLink">Begin a conversation <i data-lucide="arrow-up-right"></i></a>
         </div>
         <div class="intro-art reveal">
           <img src="https://images.unsplash.com/photo-1506126613408-eca07ce68773?auto=format&fit=crop&w=900&q=85" alt="Person meditating peacefully in a warm natural setting" loading="lazy">
-          <div class="art-caption"><span>01 / 03</span><span>RETURN TO STILLNESS</span></div>
+          <div class="art-caption"><span>01 / 03</span><span data-i18n="artCaption">RETURN TO STILLNESS</span></div>
         </div>
       </div>
     </section>
@@ -101,7 +130,7 @@
       <div class="container">
         <div class="section-heading reveal">
           <div>
-            <p class="eyebrow">EXPLORE WHAT RESONATES</p>
+            <p class="eyebrow" data-i18n="offeringEyebrow">EXPLORE WHAT RESONATES</p>
             <h2 data-i18n-html="offerTitle">Discover your <em>inner path.</em></h2>
           </div>
           <p class="heading-description" data-i18n="offerDesc">Explore different ways to deepen understanding, strengthen your practice and bring timeless wisdom into daily life.</p>
@@ -178,37 +207,37 @@
           <article class="journey-card reveal" data-category="live">
             <div class="journey-photo">
               <img src="https://images.unsplash.com/photo-1599447421416-3414500d18a5?auto=format&fit=crop&w=900&q=85" alt="Yoga class in a peaceful studio" loading="lazy">
-              <span class="pill">LIVE WORKSHOP</span>
+              <span class="pill" data-i18n="pillLive">LIVE WORKSHOP</span>
             </div>
             <div class="journey-info">
-              <div class="journey-meta"><span>LIVE EXPERIENCE</span><span>PROGRAM 01</span></div>
+              <div class="journey-meta"><span data-i18n="metaLive">LIVE EXPERIENCE</span><span>PROGRAM 01</span></div>
               <h3 data-i18n="journeyCard1Title">Guided Satsang</h3>
               <p data-i18n="journeyCard1Body">A shared space to reflect on spiritual ideas, ask questions and learn together.</p>
-              <a href="#contact" class="underlined-link">Enquire about this <i data-lucide="arrow-up-right"></i></a>
+              <a href="#contact" class="underlined-link" data-i18n="journeyLink1">Enquire about this <i data-lucide="arrow-up-right"></i></a>
             </div>
           </article>
           <article class="journey-card reveal" data-category="recorded">
             <div class="journey-photo">
               <img src="https://images.unsplash.com/photo-1508672019048-805c876b67e2?auto=format&fit=crop&w=900&q=85" alt="Peaceful meditation by the water" loading="lazy">
-              <span class="pill">SELF-PACED</span>
+              <span class="pill" data-i18n="pillSelf">SELF-PACED</span>
             </div>
             <div class="journey-info">
-              <div class="journey-meta"><span>RECORDED COURSE</span><span>PROGRAM 02</span></div>
+              <div class="journey-meta"><span data-i18n="metaRecorded">RECORDED COURSE</span><span>PROGRAM 02</span></div>
               <h3 data-i18n="journeyCard2Title">Foundations of Sadhana</h3>
               <p data-i18n="journeyCard2Body">Explore foundational practices and reflections at a pace that feels right for you.</p>
-              <a href="#contact" class="underlined-link">Register your interest <i data-lucide="arrow-up-right"></i></a>
+              <a href="#contact" class="underlined-link" data-i18n="journeyLink2">Register your interest <i data-lucide="arrow-up-right"></i></a>
             </div>
           </article>
           <article class="journey-card reveal" data-category="live">
             <div class="journey-photo">
               <img src="https://images.unsplash.com/photo-1518611012118-696072aa579a?auto=format&fit=crop&w=900&q=85" alt="Person practicing yoga outdoors" loading="lazy">
-              <span class="pill">LIVE WORKSHOP</span>
+              <span class="pill" data-i18n="pillLive">LIVE WORKSHOP</span>
             </div>
             <div class="journey-info">
-              <div class="journey-meta"><span>GUIDED PRACTICE</span><span>PROGRAM 03</span></div>
+              <div class="journey-meta"><span data-i18n="metaGuided">GUIDED PRACTICE</span><span>PROGRAM 03</span></div>
               <h3 data-i18n="journeyCard3Title">Wisdom in daily life</h3>
               <p data-i18n="journeyCard3Body">Discover ways to bring spiritual principles into everyday choices and relationships.</p>
-              <a href="#contact" class="underlined-link">Know more <i data-lucide="arrow-up-right"></i></a>
+              <a href="#contact" class="underlined-link" data-i18n="journeyLink3">Know more <i data-lucide="arrow-up-right"></i></a>
             </div>
           </article>
         </div>
@@ -223,14 +252,14 @@
           <div class="photo-stamp"><span>THE ART OF</span><strong>Being</strong><span>PRESENT</span></div>
         </div>
         <div class="about-copy reveal">
-          <p class="eyebrow">A SPACE WITH INTENTION</p>
+          <p class="eyebrow" data-i18n="aboutEyebrow">A SPACE WITH INTENTION</p>
           <h2 data-i18n-html="philosophyTitle">Rooted in simplicity.<br><em>Open to possibility.</em></h2>
-          <p class="lead">Guruji Ka Gyan is built around a simple thought: wellbeing can begin with small, meaningful moments.</p>
-          <p class="body-copy">We believe that every person's journey is different. Our intention is to create welcoming experiences that encourage curiosity, consistency and a deeper connection with yourself.</p>
+          <p class="lead" data-i18n="aboutLeadStatic">Guruji Ka Gyan is built around a simple thought: wellbeing can begin with small, meaningful moments.</p>
+          <p class="body-copy" data-i18n="aboutBodyStatic">We believe that every person's journey is different. Our intention is to create welcoming experiences that encourage curiosity, consistency and a deeper connection with yourself.</p>
           <div class="values-list">
-            <div><span>01</span><p><strong>Presence</strong><small>Make room for the moment you're in.</small></p></div>
-            <div><span>02</span><p><strong>Balance</strong><small>Find a rhythm that feels sustainable.</small></p></div>
-            <div><span>03</span><p><strong>Connection</strong><small>Learn, share and grow together.</small></p></div>
+            <div><span>01</span><p><strong data-i18n="valuePresence">Presence</strong><small data-i18n="valuePresenceDesc">Make room for the moment you're in.</small></p></div>
+            <div><span>02</span><p><strong data-i18n="valueBalance">Balance</strong><small data-i18n="valueBalanceDesc">Find a rhythm that feels sustainable.</small></p></div>
+            <div><span>03</span><p><strong data-i18n="valueConnection">Connection</strong><small data-i18n="valueConnectionDesc">Learn, share and grow together.</small></p></div>
           </div>
         </div>
       </div>
@@ -254,13 +283,13 @@
           <p class="lead" data-i18n="contactLead">Have a question about a practice or program? Send us a note and we'll be happy to connect.</p>
           <div class="contact-detail">
             <span class="detail-icon"><i data-lucide="mail"></i></span>
-            <div><small>EMAIL</small><a href="mailto:hello@example.com">hello@example.com</a></div>
+            <div><small data-i18n="emailLabel">EMAIL</small><a href="mailto:hello@example.com">hello@example.com</a></div>
           </div>
           <div class="contact-detail">
             <span class="detail-icon"><i data-lucide="map-pin"></i></span>
-            <div><small>LOCATION</small><span>Add your city or studio address</span></div>
+            <div><small data-i18n="locationLabel">LOCATION</small><span data-i18n="locationPlaceholder">Add your city or studio address</span></div>
           </div>
-          <p class="contact-note">Remember to replace the sample email and location with your business details.</p>
+          <p class="contact-note" data-i18n="contactNote">Remember to replace the sample email and location with your business details.</p>
         </div>
 
         <form class="contact-form reveal" id="contact-form" novalidate>
@@ -278,12 +307,12 @@
           <div class="form-row">
             <label for="interest" data-i18n="formInterest">I'm interested in</label>
             <select id="interest" name="interest">
-              <option value="">Choose an area (optional)</option>
-              <option>Yoga</option>
-              <option>Meditation</option>
-              <option>Live workshops</option>
-              <option>Recorded courses</option>
-              <option>Something else</option>
+              <option value="" data-i18n="optionPrompt">Choose an area (optional)</option>
+              <option data-i18n="optionYoga">Yoga</option>
+              <option data-i18n="optionMeditation">Meditation</option>
+              <option data-i18n="optionLive">Live workshops</option>
+              <option data-i18n="optionRecorded">Recorded courses</option>
+              <option data-i18n="optionOther">Something else</option>
             </select>
           </div>
           <div class="form-row">
@@ -292,7 +321,7 @@
             <small class="field-error" id="message-error"></small>
           </div>
           <button class="button button-dark form-submit" type="submit" data-i18n="formSubmit">Send your message <i data-lucide="arrow-up-right"></i></button>
-          <p class="form-status" id="form-status" role="status" aria-live="polite">Demo form: messages are validated in your browser and are not sent yet.</p>
+          <p class="form-status" id="form-status" role="status" aria-live="polite" data-i18n="formDemoStatus">Demo form: messages are validated in your browser and are not sent yet.</p>
         </form>
       </div>
     </section>
@@ -304,13 +333,13 @@
         <a class="brand brand-footer" href="#top">
           <img class="brand-logo footer-logo" src="assets/images/guruji-ka-gyan-logo.png" alt=""><span class="brand-name">Guruji Ka Gyan<small>ज्ञान · साधना · संस्कृति</small></span>
         </a>
-        <p>Timeless spiritual wisdom for a more conscious and meaningful life.</p>
+        <p data-i18n="footerDesc">Timeless spiritual wisdom for a more conscious and meaningful life.</p>
       </div>
-      <div class="footer-column"><h4>EXPLORE</h4><a href="#about">Our story</a><a href="#offerings">Offerings</a><a href="#journeys">Programs</a></div>
-      <div class="footer-column"><h4>CONNECT</h4><a href="#contact">Contact us</a><a href="#contact">Ask a question</a><a href="#top">Back to top ↑</a></div>
-      <div class="footer-social"><h4>FOLLOW THE JOURNEY</h4><div class="social-links"><a href="#" aria-label="Instagram (add your link)"><i data-lucide="instagram"></i></a><a href="#" aria-label="Facebook (add your link)"><i data-lucide="facebook"></i></a><a href="#" aria-label="YouTube (add your link)"><i data-lucide="youtube"></i></a></div><small>Add your social media links before publishing.</small></div>
+      <div class="footer-column"><h4 data-i18n="footerExplore">EXPLORE</h4><a href="#about" data-i18n="footerStory">Our story</a><a href="#offerings" data-i18n="footerOfferings">Offerings</a><a href="#journeys" data-i18n="footerPrograms">Programs</a></div>
+      <div class="footer-column"><h4 data-i18n="footerConnect">CONNECT</h4><a href="#contact" data-i18n="footerContact">Contact us</a><a href="#contact" data-i18n="footerAsk">Ask a question</a><a href="#top" data-i18n="footerBack">Back to top ↑</a></div>
+      <div class="footer-social"><h4 data-i18n="footerFollow">FOLLOW THE JOURNEY</h4><div class="social-links"><a href="#" aria-label="Instagram (add your link)"><i data-lucide="instagram"></i></a><a href="#" aria-label="Facebook (add your link)"><i data-lucide="facebook"></i></a><a href="#" aria-label="YouTube (add your link)"><i data-lucide="youtube"></i></a></div><small data-i18n="footerSocialNote">Add your social media links before publishing.</small></div>
     </div>
-    <div class="container footer-bottom"><span>© <span id="year"></span> Guruji Ka Gyan. All rights reserved.</span><span>Made with intention <span class="footer-heart">♥</span></span></div>
+    <div class="container footer-bottom"><span>© <span id="year"></span> Guruji Ka Gyan. All rights reserved.</span><span><span data-i18n="footerMade">Made with intention</span> <span class="footer-heart">♥</span></span></div>
   </footer>
 
   <button class="back-to-top" id="back-to-top" type="button" aria-label="Back to top"><i data-lucide="arrow-up"></i></button>

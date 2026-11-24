@@ -3271,3 +3271,35 @@ html[lang="te"] .journey-info h3 {
     font-size: 22px;
   }
 }
+
+.ashram-address {
+    margin-top: 35px;
+    padding: 30px;
+    background: #F5EBDD;
+    border: 1px solid rgba(128, 80, 44, 0.2);
+}
+
+.ashram-address h3 {
+    margin: 0 0 18px;
+    font-family: var(--serif);
+    font-size: 30px;
+    font-weight: 500;
+    color: #4A160F;
+}
+
+.address-details p {
+    margin: 0 0 8px;
+    color: #5A3825;
+    font-size: 14px;
+    line-height: 1.8;
+}
+
+@media (max-width: 600px) {
+    .ashram-address {
+        padding: 22px;
+    }
+
+    .address-details p {
+        font-size: 13px;
+    }
+}

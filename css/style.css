@@ -3303,3 +3303,89 @@ html[lang="te"] .journey-info h3 {
         font-size: 13px;
     }
 }
+
+
+/* ==========================================
+   ASHRAM ADDRESS - HOSTING LAYOUT FIX
+========================================== */
+
+.site-footer .ashram-address,
+.ashram-address {
+    display: block !important;
+    width: 100%;
+    max-width: 900px;
+    margin: 35px auto;
+    padding: 38px !important;
+    box-sizing: border-box;
+    background: #F5EBDD !important;
+    border: 1px solid rgba(128, 80, 44, 0.25) !important;
+}
+
+.ashram-address .eyebrow {
+    margin: 0 0 30px;
+    color: #A33E20;
+    font-size: 14px;
+    letter-spacing: 3px;
+}
+
+.ashram-address .address-content {
+    display: flex;
+    align-items: flex-start;
+    gap: 24px;
+}
+
+.ashram-address .address-icon {
+    width: 58px;
+    height: 58px;
+    flex: 0 0 58px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid #B47A25;
+    border-radius: 50%;
+    color: #A33E20;
+}
+
+.ashram-address .address-text {
+    flex: 1;
+    min-width: 0;
+}
+
+.ashram-address .address-text h3 {
+    margin: 0 0 22px;
+    color: #4A160F;
+    font-family: var(--serif);
+    font-size: 36px;
+    font-weight: 500;
+}
+
+.ashram-address .address-text p {
+    margin: 0 0 10px;
+    color: #65412D;
+    font-size: 15px;
+    line-height: 1.8;
+}
+
+@media (max-width: 600px) {
+    .ashram-address {
+        padding: 24px 18px !important;
+    }
+
+    .ashram-address .address-content {
+        gap: 14px;
+    }
+
+    .ashram-address .address-icon {
+        width: 42px;
+        height: 42px;
+        flex-basis: 42px;
+    }
+
+    .ashram-address .address-text h3 {
+        font-size: 27px;
+    }
+
+    .ashram-address .address-text p {
+        font-size: 13px;
+    }
+}
